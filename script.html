@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+<HEAD>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Abel|Fjalla+One' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="js-script.js"></script>
+<TITLE></TITLE>
+</HEAD>
+<BODY onload = "changePage()">
+	<div class="container">
+		<div class="row">
+			<div id="headtitle">
+				<h1>E-CARD</h1>
+				<div class="col-md-6">
+					<p>
+					Send free online greeting cards, ecards, postcards & egreetings with quotes for friends and family on special occasions: Birthdays, Love, ...</p>
+				</div>
+				<div class="col-md-6 text-right">
+					<p>contact : pang@prontomarketing.com</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12" id="leftslide">
+				<div class="col-md-8" id="contentt">
+					<h3>Live preview</h3>
+					<div id="content"></div>
+				</div>
+				<form method="post" action="writeFile.php" enctype="multipart/form-data">
+					<div class="form-group col-md-4" id="formcontent">
+						<center><h3 class="col-xs-12">Create your E-Card</h3></center>
+						<p>
+							<label class="control-label col-md-4">Text color: #</label>
+							<input id="rowfrom" type="text" name="textColor" value="888888" class="col-md-8 col-xs-12">
+						</p>
+						<p>
+							<label class="control-label col-md-4">Footer - address:</label>
+							<textarea id="rowfrom" type="text" name="address" rows="3" cols="50" class="col-md-8 col-xs-12">Compunet Technologies, Inc. 30212 Tomas Suite 210 Rancho Santa Margarita, CA 92688<br>Phone: (949) 609-0563 </textarea>
+						</p>
+						<p>
+							<label class="col-md-4">Ecard file: </label>
+							<input id="uploadFile" placeholder="Choose File" disabled="disabled" class="upload col-md-5 col-xs-4" />
+							<span class="fileUpload btn uploadbtn" id="rowfrom" >
+							    <span>Browse...</span>
+							    <input id="uploadBtn" name="file" type="file" class="upload" />
+							</span>
+							<!--<input id="rowfrom" type="file" name="file" id="file" class="col-md-9"/>-->
+						</p>
+						<p>
+							<label class="col-md-4">client mail: </label><input id="rowfrom" type="text" name="mail" size="50" value="newsletter@compunettechnologies.com" class="col-md-8 col-xs-12">
+						</p>
+						<p>
+							<label class="col-md-4">company name: </label><input id="rowfrom" type="text" size="50" name="company" value="Compunet Technologies, Inc" class="col-md-8 col-xs-12">
+						</p>
+						<p   id ="submitbtn">
+						<input class="btn btn-primary col-xs-12" type="submit" name="submit" value="Sent" >
+						</p>
+						<!-- onclick="changePage();return false;" -->
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		document.getElementById("uploadBtn").onchange = function () {
+			document.getElementById("uploadFile").value = this.value;
+		};
+		// $(function(){
+		// 	$("form").submit(function(){
+		// 		var str = $(this).serialize();
+		// 		$.ajax('writeFile.php',str,function(result){
+		// 			alert(result);
+		// 		});
+		// 		return(false);
+		// 	});
+		// });
+		
+	</script>
+
+</BODY>
+</HTML>

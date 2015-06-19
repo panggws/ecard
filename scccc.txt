@@ -1,0 +1,40 @@
+<script type="text/javascript">
+    function createRequest() {
+      try {
+      request = new XMLHttpRequest();
+      } catch (tryMS) {
+      try {
+        request = new ActiveXObject("Msxml2.XMLHTTP");
+      } catch (otherMS) {
+        try {
+        request = new ActiveXObject("Microsoft.XMLHTTP");
+        } catch (failed) {
+        request = null;
+        }
+      }
+      } 
+      return request;
+    }
+    function clickbutton(){
+    var request = createRequest();
+    if(request==null){
+      alert("Unable to create request");
+      return;
+    }
+    
+    var textt=document.getElementById("text1").value;
+    var url ="upload.php?text1="+tesxtt;
+    request.open("GET",url,true); 
+    request.onreadystatechange = showRespondtext;
+    request.send();
+    }
+    function showRespondtext(){
+      
+      if(request.readyState == 4){
+        if(request.status==200){
+          document.getElementById("content").innerHTML=request.responseText;
+          
+        }
+      }
+    }
+  </script>
